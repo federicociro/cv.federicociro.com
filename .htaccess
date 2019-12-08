@@ -1,11 +1,9 @@
 RewriteEngine On
+RewriteCond %{HTTP_HOST} ^federicociro.com [NC]
+RewriteRule ^(.*)$ http://www.federicociro.com/$1 [L,R=301]
+
 RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^http(s)?://(.+\.)?federicociro\.com [NC]
 RewriteRule .*\.(jp(e)?g|gif|bmp|png)$ https://imgur.com/ZtXiCBw.gif [L,R]
 
-RewriteEngine On
 RedirectMatch 404 /\.git
-
-RewriteEngine On
-RewriteCond %{HTTP_HOST} ^federicociro.com [NC]
-RewriteRule ^(.*)$ http://www.federicociro.com/$1 [L,R=301]
